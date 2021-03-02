@@ -18,6 +18,7 @@ flag=True
 if(sum(listflens)<20):
     flag=False
 listf, listflens = (list(t) for t in zip(*sorted(zip(listf, listflens))))
+print("\'",20,"\'",":[", end="")
 while (flag):
     i=0
     j=len(listf)-1
@@ -25,6 +26,7 @@ while (flag):
     sumnums=[]
     flag=False
     flag2=True
+    word=""
     while (i<=j and flag2):
         if (listflens[j]+sum<=20):
             sumnums.append(j)
@@ -35,8 +37,9 @@ while (flag):
     if (sum==20):
         for j in range(len(sumnums)-1):
             listflens.pop(sumnums[j])
-            listf.pop(sumnums[j])
+            word+=listf.pop(sumnums[j])
         flag=True
+        print(word, ",", end=" ")
     else:
         j=len(listf)-1
         flag2=True
@@ -53,9 +56,11 @@ while (flag):
             k=0
             for i in range(len(sumnums)-1):
                 listflens.pop(sumnums[i-k])
-                listf.pop(sumnums[i-k])
+                word+=listf.pop(sumnums[i-k])
                 k+=1
             flag=True
+            print(word, ",", end=" ")
+print("]")
 for i in range(1,20):
     print("\'",i,"\'",":", end="")
     flag3=True
