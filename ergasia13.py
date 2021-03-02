@@ -76,4 +76,15 @@ while (flag):
                 listf.pop(sumnums[i-k])
                 k+=1
             flag=True
-print(listf)
+listflens=[]
+for i in range(len(listf)-1):
+    listflens=len(listf[i])
+for i in range(1,20):
+    print(i,":")
+    flag3=True
+    for j in len(listflens):
+        if (listflens[j]=i):
+            print(listf[j])
+            flag3=False
+    if flag3:
+        print(0)
