@@ -56,15 +56,15 @@ while (flag):
                 listf.pop(sumnums[i-k])
                 k+=1
             flag=True
-listflens=[]
-for i in range(len(listf)-1):
-    listflens=len(listf[i])
 for i in range(1,20):
-    print(i,":")
+    print("\'",i,"\'",":", end="")
     flag3=True
-    for j in len(listflens):
-        if (listflens[j]=i):
-            print(listf[j])
+    k=0
+    for j in listflens:
+        if (j==i):
+            print(listf[k], end=" ")
             flag3=False
+        k+=1
     if flag3:
-        print(0)
+        print("\"\"", end="")
+    print("\r")
